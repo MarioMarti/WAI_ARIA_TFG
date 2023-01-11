@@ -1,0 +1,34 @@
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "rgba(255,255,255,0.9)",
+	  "text": "#002E45",
+	  "border-radius": "4px"
+    },
+    "button": {
+      "background": "#002E45",
+      "text": "#fff"
+    },
+	"link": {
+	  "text": "#002E45"
+	}
+  },
+  "position": "bottom",
+  "revokable": "true",
+  "theme": "classic",
+  "type": "info",
+  "content": {
+    "message": "<p>Aquest web utilitza cookies pròpies i de tercers per millorar l'experiència de navegació. Si continueu navegant considerem que accepteu que n'utilitzem.</p>",
+    "dismiss": "Acceptar",
+    "allow": "Acceptar",
+    "link": "Política de privacitat",
+    "href": "https://www.udl.cat/ca/legal/",
+	"deny": "Denegar",
+	"policy": "Cookies"
+  }
+}, function(popup){
+  popup.toggleRevokeButton(false) // this will hide the revoke
+})
+}
+);
