@@ -1,0 +1,417 @@
+/* ===========================================================
+ * Demo js
+ * ========================================================== */
+
+
+$(document).ready(function () {
+
+	// Magnific popup Lightbox
+	// TRANSLATION - Add it after jquery.magnific-popup.js and before first initialization code
+
+	var curLang = $('html').attr('lang');
+
+	switch (curLang) {
+		case 'de':
+			$.extend(true, $.magnificPopup.defaults, {
+				tClose: 'Schließen',
+				tLoading: 'Wird geladen...',
+				gallery: {
+					tPrev: 'Zurück',
+					tNext: 'Weiter',
+					tCounter: '%curr% von %total%'
+				},
+				image: {
+					tError: 'Das <a href="%url%">Bild</a> konnte nicht geladen werden.'
+				},
+				ajax: {
+					tError: 'Der <a href="%url%">Inhalt</a> konnte nicht geladen werden.'
+				}
+			});
+			break;
+		case 'es':
+			$.extend(true, $.magnificPopup.defaults, {
+				tClose: 'Cerrar (Tecla Esc)', // Alt text on close button
+				tLoading: 'Cargando...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+				gallery: {
+					tPrev: 'Imagen Anterior de la Galería (Tecla de flecha a la izquierda)', // Alt text on left arrow
+					tNext: 'Imagen Siguiente de la Galería (Tecla de flecha a la derecha)', // Alt text on right arrow
+					tCounter: '%curr% de %total%' // Markup for "1 of 7" counter
+				},
+				image: {
+					tError: '<a href="%url%">La imagen</a> no puede cargarse.' // Error message when image could not be loaded
+				},
+				ajax: {
+					tError: '<a href="%url%">El contenido</a> no se puede cargar.' // Error message when ajax request failed
+				}
+			});
+			break;
+		case 'en':
+			$.extend(true, $.magnificPopup.defaults, {
+				tClose: 'Close (Esc)', // Alt text on close button
+				tLoading: 'Loading...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+				gallery: {
+					tPrev: 'Previous (Left arrow key)', // Alt text on left arrow
+					tNext: 'Next (Right arrow key)', // Alt text on right arrow
+					tCounter: '%curr% of %total%' // Markup for "1 of 7" counter
+				},
+				image: {
+					tError: '<a href="%url%">The image</a> could not be loaded.' // Error message when image could not be loaded
+				},
+				ajax: {
+					tError: '<a href="%url%">The content</a> could not be loaded.' // Error message when ajax request failed
+				}
+			});
+			break;
+		case 'ca':
+			$.extend(true, $.magnificPopup.defaults, {
+				tClose: 'Tancar (Tecla Esc)', // Alt text on close button
+				tLoading: 'Carregant...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+				gallery: {
+					tPrev: 'Imatge Anterior de la Galeria (Tecla de fletxa ala esquerra)', // Alt text on left arrow
+					tNext: 'Imatge Següent de la Galeria (Tecla de fletxa ala dreta)', // Alt text on right arrow
+					tCounter: '%curr% de %total%' // Markup for "1 of 7" counter
+				},
+				image: {
+					tError: '<a href="%url%">La imatge</a> no pot carregar-se.' // Error message when image could not be loaded
+				},
+				ajax: {
+					tError: '<a href="%url%">El contingut</a> no pot carregar-se.' // Error message when ajax request failed
+				}
+			});
+			break;
+		default:
+			$.extend(true, $.magnificPopup.defaults, {
+				tClose: 'Close (Esc)', // Alt text on close button
+				tLoading: 'Loading...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+				gallery: {
+					tPrev: 'Previous (Left arrow key)', // Alt text on left arrow
+					tNext: 'Next (Right arrow key)', // Alt text on right arrow
+					tCounter: '%curr% of %total%' // Markup for "1 of 7" counter
+				},
+				image: {
+					tError: '<a href="%url%">The image</a> could not be loaded.' // Error message when image could not be loaded
+				},
+				ajax: {
+					tError: '<a href="%url%">The content</a> could not be loaded.' // Error message when ajax request failed
+				}
+			});
+	}
+
+	try{
+		$('.zoom-filter').magnificPopup({
+			type:'image',
+			/*closeMarkup: '<button title="tClose" type="button" class="mfp-close" aria-label="Close"><span aria-hidden="true">&#215;</span></button>',*/
+			gallery:{
+				enabled:true
+			}
+		});
+	}catch(e){}
+
+	// Magnific popup Lightbox
+	try{
+		$('.gallery').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+				delegate: '.zoom-filter', // the selector for gallery item
+				type: 'image',
+				gallery: {
+					enabled:true
+				}
+			});
+		});
+	}catch(e){}
+
+	// para que los enlaces con ancla especiales nos lleven con animacion al bloque correspondiente de la página
+
+	$("a.data-link").on("click" ,function (e) {
+		e.preventDefault();
+		var hash = $(this).attr("href");
+		$('html, body').animate({scrollTop: $(hash).offset().top}, 1000);
+		if(history.pushState) {
+			console.log('pushstate');
+			history.pushState(null, null, hash);
+		}
+		else {
+			location.hash = hash;
+		}
+	});
+
+	//Implementa tooltip en los elementos con la clase selector y ademas le aniadimos las clases asociadas al enlace al contenedor del tooltip
+
+
+	$( ".hastooltip" ).tooltip();
+
+	function closeBrowserWindow()
+	{
+		window.open('','_self','');
+		window.close();
+	}
+	function printWindow()
+	{
+		window.print();
+	}
+	// IMPRIMIR
+
+	$('.print-page').on('click', function (e) {
+		e.preventDefault();
+		printWindow();
+	});
+
+	// CERRAR VENTANA
+
+	$('.close-window').on('click', function (e) {
+		e.preventDefault();
+		closeBrowserWindow();
+	});
+
+	// AUTO FOCUS EN MODAL BUSCADOR
+
+	$('#searchFormModal').on('shown.bs.modal', function () {
+		$('#query').focus()
+	});
+
+	// PARA EVITAR EL CIERRE AUTOMATICO DEL DROPDOWN-MENU DEL MEGA MENU CUANDO HACES CLICK DENTRO DEL MISMO
+
+	$(document).on('click', '.navbar-responsive-collapse .navbar-right .dropdown-menu', function (e) {
+		e.stopPropagation();
+	});
+
+	// PARA HACER QUE EL DIV DE AMPLIAR IMAGENES FUNCIONE SIN ENLACE YA QUE AL MIGRAR EL WYSIWYG QUITA LOS ENALCES VACIOS
+
+	$('#foto #ampliar').on('click', function (e) {
+		$(this).parents('#foto').find('.thickbox').click();
+	});
+
+	// PPARA DETECTAR LAS IMÁGENES CON ENLACE Y QUE NO INCLUYAN EL ICONO VECTORIAL EN EL :BEFORE
+
+	$('a:has(img.img-responsive)').addClass("no-icon");
+
+// para que en el menu responsive si haces click en una seccion por debajo de otra desplegada muy extensa haga scrolltop hasta la que has hecho click	
+// para cargar el overlay de fondo en el menu responsive
+
+	$('.menu.mobile').on('shown.bs.collapse', function (e) {
+
+		var clickedHeader = $(this).find('.panel > .in').closest('.panel').find('.bullet');
+		var offset = clickedHeader.offset();
+		var top = $(window).scrollTop();
+		if(offset) {
+			var topOfHeader = offset.top;
+			if(topOfHeader < top) {
+				$('html,body').animate({ scrollTop: topOfHeader}, 100, 'swing');
+			}
+		}
+	});
+	$('#header').on('shown.bs.dropdown', function (e) {
+
+		var clickedHeader = $(this).find('.navbar-nav > .dropdown.open').closest('.dropdown').find('.dropdown-toggle');
+		var offset = clickedHeader.offset();
+		var top = $(window).scrollTop();
+		if(offset) {
+			var topOfHeader = offset.top;
+			if(topOfHeader < top) {
+				$('html,body').animate({ scrollTop: topOfHeader}, 100, 'swing');
+			}
+		}
+	});
+
+	// PARA CAMBIAR EL ICONO DE DESPLIEGUE DE MENU Y DE DESPLIEGUE DE COLUMNA < 768PX
+
+	$('body').append('<div class="overlay-menu-responsive" style="display: none;"></div>');
+	$('body').append('<div class="overlay-column-responsive" style="display: none;"></div>');
+
+	$('body .main-content.aside-right').append('<button type="button" class="btn hidden-md hidden-lg btn-specific-secondary column-btn display-to-left" aria-label="display-to-left"><span class="fa fa-chevron-left" aria-hidden="true"></span></button>');
+	$('body .main-content.aside-left').append('<button type="button" class="btn hidden-md hidden-lg btn-specific-secondary column-btn display-to-right" aria-label="display-to-right"><span class="fa fa-chevron-right" aria-hidden="true"></span></button>');
+
+	$('.main-content.aside-right .column-btn').on('click', function (e) {
+		if (!$(e.currentTarget).hasClass('shown')) {
+			$(e.currentTarget).addClass('shown');
+			$('.main-content.aside-right > .wrapper > .row > [class*="col-"]:last-child').addClass('displayed');
+			$('.overlay-column-responsive').fadeIn();
+			$(e.currentTarget).find('.fa').removeClass('fa-chevron-left').addClass('fa-chevron-right');
+			$('html').addClass('no-scroll');
+		}
+		else {
+			$(e.currentTarget).removeClass('shown');
+			$('.main-content.aside-right > .wrapper > .row > [class*="col-"]:last-child').removeClass('displayed');
+			$('.overlay-column-responsive').fadeOut();
+			$(e.currentTarget).find('.fa').removeClass('fa-chevron-right').addClass('fa-chevron-left');
+			$('html').removeClass('no-scroll');
+		}
+	});
+
+	$('.main-content.aside-left .column-btn').on('click', function (e) {
+		if (!$(e.currentTarget).hasClass('shown')) {
+			$(e.currentTarget).addClass('shown');
+			$('.main-content.aside-left > .wrapper > .row > [class*="col-"]:first-child').addClass('displayed');
+			$('.overlay-column-responsive').fadeIn();
+			$(e.currentTarget).find('.fa').removeClass('fa-chevron-right').addClass('fa-chevron-left');
+			$('html').addClass('no-scroll');
+		}
+		else {
+			$(e.currentTarget).removeClass('shown');
+			$('.main-content.aside-left > .wrapper > .row > [class*="col-"]:first-child').removeClass('displayed');
+			$('.overlay-column-responsive').fadeOut();
+			$(e.currentTarget).find('.fa').removeClass('fa-chevron-left').addClass('fa-chevron-right');
+			$('html').removeClass('no-scroll');
+		}
+	});
+
+	// PARA DESPLEGAR COLUMNAS AL DESLIZAR DEDO POR PANTALLA A LA IZQUIERDA Y VICEVERSA
+
+	// DESPLIEGUE DE COLUMNA DERECHA
+
+	$("body.responsive-device").on("swipeleft",function(){
+		$.event.special.swipe.horizontalDistanceThreshold = 100;
+		var clase = $('.column-btn.display-to-left').attr('class');
+		if (!$('.column-btn').hasClass('shown')) {
+			$('.column-btn').click();
+		}
+	});
+	$("body.responsive-device").on("swiperight",function(){
+		$.event.special.swipe.horizontalDistanceThreshold = 100;
+		var clase = $('.column-btn.display-to-left').attr('class');
+		if ($('.column-btn').hasClass('shown')) {
+			$('.column-btn').click();
+		}
+	});
+
+	// DESPLIEGUE DE COLUMNA IZQUIERDA
+
+	$("body.responsive-device").on("swiperight",function(){
+		$.event.special.swipe.horizontalDistanceThreshold = 100;
+		var clase = $('.column-btn.display-to-right').attr('class');
+		if (!$('.column-btn').hasClass('shown')) {
+			$('.column-btn').click();
+		}
+	});
+	$("body.responsive-device").on("swipeleft",function(){
+		$.event.special.swipe.horizontalDistanceThreshold = 100;
+		var clase = $('.column-btn.display-to-right').attr('class');
+		if ($('.column-btn').hasClass('shown')) {
+			$('.column-btn').click();
+		}
+	});
+
+	// CAMBIO DE ICONO EN DESPLIEGUE DE MEGAMENU
+
+	$('.header').on('click','.navbar-toggle', function (e) {
+
+		var clase = $(e.currentTarget).attr('class');
+		if (clase == 'navbar-toggle' || clase == 'navbar-toggle collapsed'){
+			$(e.currentTarget).addClass('shown');
+			$(e.currentTarget).find('.fa').removeClass('fa-bars').addClass('fa-close');
+			$('.overlay-menu-responsive').fadeIn();
+		}
+		else {
+			$(e.currentTarget).removeClass('shown');
+			$(e.currentTarget).find('.fa').removeClass('fa-close').addClass('fa-bars');
+			$('.overlay-menu-responsive').fadeOut();
+		}
+	});
+
+	$('.header .navbar-toggle').on('click', function (e) {
+		var expanded = $(this).attr('aria-expanded');
+		if (expanded == 'false'){
+			$(this).find('.fa').removeClass('fa-bars').addClass('fa-close');
+			$('.overlay-menu-responsive').fadeIn();
+		}
+		if (expanded == 'true'){
+			$(this).find.find('.fa').removeClass('fa-close').addClass('fa-bars');
+			$('.overlay-menu-responsive').fadeOut();
+			$('.main-navigation-collapse').find('a[aria-expanded="true"]').click();
+		}
+	});
+
+	$(document).on('click', '.overlay-column-responsive', function (e) {
+		$('.overlay-column-responsive').hide();
+		$('.column-btn').removeClass('shown');
+		$('.main-content.aside-right .column-btn .fa').removeClass('fa-chevron-right').addClass('fa-chevron-left');
+		$('.main-content.aside-left .column-btn .fa').removeClass('fa-chevron-left').addClass('fa-chevron-right');
+		$('.main-content.aside-right > .wrapper > .row > [class*="col-"]:last-child.displayed').removeClass('displayed');
+		$('.main-content.aside-left > .wrapper > .row > [class*="col-"]:first-child.displayed').removeClass('displayed');
+		$('html').removeClass('no-scroll');
+	});
+	$(document).on('click', '.overlay-menu-responsive', function (e) {
+		$('.header .navbar-toggle').attr('class', 'navbar-toggle collapsed');
+		$('.navbar-responsive-collapse').collapse('hide');
+		$('.overlay-menu-responsive').hide();
+		$('.header .navbar-toggle').find('.fa').removeClass('fa-close').addClass('fa-bars');
+		$('html,body').animate({ scrollTop: 0}, 800, 'swing');
+	});
+
+	// PARA CAMBIAR EL ICONO DEL DESPLEGABLE DE BUSCADOR EN
+
+
+	$('#header .search').on('shown.bs.dropdown', function () {
+		$('.search .dropdown-toggle .fa').removeClass('fa-search').addClass('fa-close');
+	});
+	$('#header .search').on('hidden.bs.dropdown', function () {
+		$('.search .dropdown-toggle .fa').removeClass('fa-close').addClass('fa-search');
+	});
+
+// PARA CAMBIAR LA ORIENTACION DE LA FLECHA DE DESPLIEGUE EN EL MENU ACCORDION
+
+	$('.menu-accordion').on('shown.bs.collapse', function () {
+		$(this).find('[aria-expanded="true"] .fa').removeClass('fa-angle-down').addClass('fa-angle-up');
+	})
+
+	$('.menu-accordion').on('hidden.bs.collapse', function () {
+		$(this).find('[aria-expanded="false"] .fa').removeClass('fa-angle-up').addClass('fa-angle-down');
+	})
+
+
+	// Gestion de la posicion fija de la cabecera y del comportamiento del menu en tablet y desktop
+
+	$( "body" ).append( "<div class='back-to-top' style='display: none;'><button title='Top' type='button' class='btn btn-specific-main' data-toggle='tooltip' data-placement='left' aria-label='Top'><span class='fa fa-chevron-up' aria-hidden='true'></span></button></div>" );
+
+	$('.back-to-top > button').on('click', function (e) {
+		$('html, body').animate({scrollTop: 0}, 500);
+	});
+
+	$(window).scroll(function() {
+		//Boton de volver arriba
+		var offset = 840;
+		var duration = 500;
+		if ($(this).scrollTop() > offset) {
+			$('.back-to-top').fadeIn(duration);
+		} else {
+			$('.back-to-top').fadeOut(duration);
+		}
+	});
+
+	// para reproducir el video al llegar al slide del carrusel donde se encuentra
+	if($('.carousel').find('video').length) {
+		$('.carousel video').trigger('pause');
+		if ($('.carousel').find('.active video').length) {
+			$('.carousel .active video').trigger('play');
+		}
+	}
+
+	$('.carousel').on('slid.bs.carousel', function () {
+		if($(this).find('video').length) {
+			$(this).find('video').trigger('pause');
+			if ($(this).find('.active video').length) {
+				$(this).find('.active video').trigger('play');
+			} else {
+				$(this).find('video').trigger('pause');
+			}
+		}else{}
+	})
+
+});
+
+$(window).load(function() {
+
+	// PARA DETENER EL CARRUSEL CUANDO HACES CLICK DENTRO DE UN ITEM (POR EJEMPLO EN LOS VIDEOS)
+	var carruselvideo = $('.carousel-inner .item .responsive-video');
+	if(carruselvideo.length > 0){
+		$('.carousel-inner .item .responsive-video').prepend('<div class="responsive-video-cover" style="position: absolute;left:0;right:0;top:0;bottom:0">');
+		$('.carousel-inner .item .responsive-video .responsive-video-cover').on('click', function (e) {
+			var carrusel = $(this).parents('.carousel');
+			$(carrusel).carousel('pause');
+			$(this).hide();
+		});
+	}
+
+});
+
+
