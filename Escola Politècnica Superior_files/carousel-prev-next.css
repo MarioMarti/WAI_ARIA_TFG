@@ -17,10 +17,11 @@ img.reload {
   position: relative;
 }
 
+/*
 .carousel .carousel-items {
   padding: 5px;
 }
-
+*/
 .carousel .carousel-items.focus {
   padding: 2px;
   border: solid 3px #005a9c;
@@ -40,7 +41,7 @@ img.reload {
 }
 
 /* More like bootstrap, less accessible */
-
+/*
 .carousel .carousel-item .carousel-image a img {
   height: 100%;
   width: 100%;
@@ -260,7 +261,6 @@ img.reload {
   height: 60px;
   color: black;
 }
-
 .carousel-moreaccessible .carousel-item .carousel-caption p {
   padding: 0;
   margin: 0;
