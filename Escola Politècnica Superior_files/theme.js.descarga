@@ -100,7 +100,7 @@ $(document).ready(function () {
 	try{
 		$('.zoom-filter').magnificPopup({
 			type:'image',
-			/*closeMarkup: '<button title="tClose" type="button" class="mfp-close"><span aria-hidden="true">&#215;</span></button>',*/
+			/*closeMarkup: '<button title="tClose" type="button" class="mfp-close" aria-label="Close"><span aria-hidden="true">&#215;</span></button>',*/
 			gallery:{
 				enabled:true
 			}
@@ -218,8 +218,8 @@ $(document).ready(function () {
 	$('body').append('<div class="overlay-menu-responsive" style="display: none;"></div>');
 	$('body').append('<div class="overlay-column-responsive" style="display: none;"></div>');
 
-	$('body .main-content.aside-right').append('<button type="button" class="btn hidden-md hidden-lg btn-specific-secondary column-btn display-to-left"><span class="fa fa-chevron-left" aria-hidden="true"></span></button>');
-	$('body .main-content.aside-left').append('<button type="button" class="btn hidden-md hidden-lg btn-specific-secondary column-btn display-to-right"><span class="fa fa-chevron-right" aria-hidden="true"></span></button>');
+	$('body .main-content.aside-right').append('<button type="button" class="btn hidden-md hidden-lg btn-specific-secondary column-btn display-to-left" aria-label="display-to-left"><span class="fa fa-chevron-left" aria-hidden="true"></span></button>');
+	$('body .main-content.aside-left').append('<button type="button" class="btn hidden-md hidden-lg btn-specific-secondary column-btn display-to-right" aria-label="display-to-right"><span class="fa fa-chevron-right" aria-hidden="true"></span></button>');
 
 	$('.main-content.aside-right .column-btn').on('click', function (e) {
 		if (!$(e.currentTarget).hasClass('shown')) {
@@ -361,7 +361,7 @@ $(document).ready(function () {
 
 	// Gestion de la posicion fija de la cabecera y del comportamiento del menu en tablet y desktop
 
-	$( "body" ).append( "<div class='back-to-top' style='display: none;'><button title='Top' type='button' class='btn btn-specific-main' data-toggle='tooltip' data-placement='left'><span class='fa fa-chevron-up' aria-hidden='true'></span></button></div>" );
+	$( "body" ).append( "<div class='back-to-top' style='display: none;'><button title='Top' type='button' class='btn btn-specific-main' data-toggle='tooltip' data-placement='left' aria-label='Top'><span class='fa fa-chevron-up' aria-hidden='true'></span></button></div>" );
 
 	$('.back-to-top > button').on('click', function (e) {
 		$('html, body').animate({scrollTop: 0}, 500);
