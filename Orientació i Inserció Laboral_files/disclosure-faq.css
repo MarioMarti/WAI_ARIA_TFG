@@ -1,12 +1,7 @@
 .sg-tabs button {
   margin: 0;
-  margin-top: 16px;
-  padding: 4px 8px;
-  font-weight: bold;
-  font-size: 110%;
   border: none;
   background-color: transparent;
-  border-radius: 5px;
 }
 
 .sg-tabs .descr {
