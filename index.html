@@ -1,68 +1,57 @@
 
-<script src="./Orientació i Inserció Laboral_files/accordion.js"></script>
-<link rel="stylesheet" href="./Orientació i Inserció Laboral_files/accordion.css">
-
-<div id="accordionGroup" class="accordion">
-  <h3>
-    <button type="button"
-            aria-expanded="true"
-            class="accordion-trigger"
-            aria-controls="sect1"
-            id="accordion1id">
-      <span class="accordion-title">
-        Personal Information
-        <span class="accordion-icon"></span>
-      </span>
-    </button>
-  </h3>
-  <div id="sect1"
-       role="region"
-       aria-labelledby="accordion1id"
-       class="accordion-panel">
-    <div>
-     ejemplo1
-    </div>
-  </div>
-  <h3>
+<script src="./Orientació i Inserció Laboral_files/disclosure-button.js"></script>
+<link rel="stylesheet" href="./Orientació i Inserció Laboral_files/disclosure-faq.css">
+<h3>
+  Parking
+  <abbr title="Frequently Asked Questions">
+    FAQ
+  </abbr>
+  s
+</h3>
+<dl class="faq">
+  <dt>
     <button type="button"
             aria-expanded="false"
-            class="accordion-trigger"
-            aria-controls="sect2"
-            id="accordion2id">
-      <span class="accordion-title">
-        Billing Address
-        <span class="accordion-icon"></span>
-      </span>
+            aria-controls="faq1_desc">
+      What do I do if I have a permit for an assigned lot, but can't find a space there?
     </button>
-  </h3>
-  <div id="sect2"
-       role="region"
-       aria-labelledby="accordion2id"
-       class="accordion-panel"
-       hidden="">
-    <div>
-      ejemplo2
+  </dt>
+  <dd>
+    <div id="faq1_desc" class="desc">
+      Park at the nearest available parking meter without paying the meter and call 999-999-9999 to report the problem.
+      We will note and approve your alternate location and will investigate the cause of the shortage in your assigned facility.
     </div>
-  </div>
-  <h3>
+  </dd>
+  <dt>
     <button type="button"
             aria-expanded="false"
-            class="accordion-trigger"
-            aria-controls="sect3"
-            id="accordion3id">
-      <span class="accordion-title">
-        Shipping Address
-        <span class="accordion-icon"></span>
-      </span>
+            aria-controls="faq2_desc">
+      What do I do if I lose my permit or if my permit is stolen?
     </button>
-  </h3>
-  <div id="sect3"
-       role="region"
-       aria-labelledby="accordion3id"
-       class="accordion-panel"
-       hidden="">
-    <div>
-      ejemplo3
+  </dt>
+  <dd>
+    <div id="faq2_desc" class="desc">
+      You should come to the Parking office and report the loss.
+      There is a fee to replace your lost permit.
+      However, if your permit was stolen, a copy of a police report needs to be submitted along with a stolen parking permit form for a fee replacement exemption.
     </div>
-  </div>
-</div>
+  </dd>
+  <dt>
+    <button type="button"
+            aria-expanded="false"
+            aria-controls="faq3_desc">
+      Is there free parking on holidays?
+    </button>
+  </dt>
+  <dd>
+    <div id="faq3_desc" class="desc">
+      All facilities are restricted from 2:00 am - 6:00 am on all days.
+      No exceptions are made for any holiday or recess except those officially listed as a
+      <q>
+        Holidays
+      </q>
+      in the calendar.
+      Please note: 24-hour rental spaces, 24-hour rental lots, and disabled parking is enforced at all times.
+    </div>
+  </dd>
+</dl>
