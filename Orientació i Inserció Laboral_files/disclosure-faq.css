@@ -21,7 +21,6 @@
 
 .sg-tabs button:hover,
  .sg-tabs button:focus {
-  padding: 2px 6px;
   background-color: #def;
   border: 2px solid #005a9c;
   cursor: pointer;
