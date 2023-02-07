@@ -1,4 +1,4 @@
-.dropdown-info-per a:hover {
+.dropdown-info-per a:hover .btn{
     background: #86b7ce;
     color: #fff;
 }
