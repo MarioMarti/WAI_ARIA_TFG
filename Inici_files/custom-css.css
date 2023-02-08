@@ -75,7 +75,6 @@ body{opacity: 1;}
 .carousel-control .icon-next, .carousel-control .glyphicon-chevron-right { right: 20%;}
 .carousel-control .glyphicons-chevron-left, .carousel-control .glyphicons-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next { margin-top: -25px; font-size: 50px;}
 
-.carousel .carousel-control-acc { display: none !important;}
 
 /*#sliderdestacats a {color: #831453;}
 #sliderdestacats a:hover {color: #000;}*/
