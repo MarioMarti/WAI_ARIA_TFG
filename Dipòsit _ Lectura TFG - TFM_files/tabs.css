@@ -8,59 +8,49 @@
 */
 [class="tablistTFG"]{
   min-width: 550px;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
 }
 [class="tabTFG"]{
   padding: 12px 15px;
   font-size: 15px;
-  margin-bottom: -1px;
-  position: relative;
-  border-bottom: 1px solid #ddd;
-  background: #f3f3f3;
-  color: #62a1bf;
-  
+  border-radius: 0;
 }
-/*
 [class="tabTFG"],[class="tabTFG"]:focus{
   background: #f3f3f3;
   border: none;
-  padding: 12px 10px;
 }
-*/
-[class="tabTFG"]:focus{
+
+[class="tabTFG"]:hover{
+
   position: relative;
-  padding: 10px 15px;
-  text-decoration: none;
-  margin-bottom: -1px;
-  margin-right: 2px;
-  line-height: 1.428571429;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-  background-color: #eeeeee;
-  color: #62a1bf;
+  z-index: 2;
+  top: 2px;
+  margin: 0;
+  border: 1px solid hsl(219deg 1% 72%);
+  border-bottom: 2px solid hsl(219deg 1% 72%);
+  border-radius: 5px 5px 0 0;
+  overflow: visible;
+  outline: none;
+  font-weight: bold;
 
 }
 
 [class="tabTFG"][aria-selected="true"]{
 
   margin-top: 0;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
-  background-color: #ffffff;
-
+  border-width: 2px;
+  border-top-width: 6px;
+  border-top-color: rgb(36 116 214);
+  border-bottom-color: hsl(220deg 43% 99%);
+  background: #ddd;
+  color: #86b7ce;
+  font-weight: bold;
 
 }
-
 
 [class="tabTFG"][aria-selected="false"]{
-  text-decoration: none;
-  border: 1px solid #ddd;
   color: #86b7ce;
+  background: none;
 }
-
-
 
 [class="tabTFG"]:hover span.focus,
 [class="tabTFG"]:focus span.focus,
@@ -72,7 +62,7 @@
 
 
 
-/*
+
 [class="tabpanelTFG"]{
 
   padding: 20px;
@@ -81,7 +71,6 @@
   min-height: 10em;
   min-width: 550px;
   overflow: hidden;
-
 }
 
 [class="tabpanelTFG"] p {
@@ -113,6 +102,7 @@
   outline: none;
   font-weight: bold;
 }
+
 [role="tab"][aria-selected="true"] {
   padding: 2px 2px 4px;
   margin-top: 0;
@@ -122,14 +112,17 @@
   border-bottom-color: hsl(220deg 43% 99%);
   background: hsl(220deg 43% 99%);
 }
+
 [role="tab"][aria-selected="false"] {
   border-bottom: 1px solid hsl(219deg 1% 72%);
 }
+
 [role="tab"] span.focus {
   display: inline-block;
   margin: 2px;
   padding: 4px 6px;
 }
+
 [role="tab"]:hover span.focus,
 [role="tab"]:focus span.focus,
 [role="tab"]:active span.focus {
@@ -137,6 +130,9 @@
   border: 2px solid rgb(36 116 214);
   border-radius: 3px;
 }
+
+
+
 [role="tabpanel"] {
   padding: 20px;
   border: 2px solid hsl(219deg 1% 72%);
@@ -154,9 +150,11 @@
   display: none;
 }
 /*  
+
 [role="tabpanel"] p {
   margin: 0;
 }
+
 [role="tabpanel"] h3 {
       padding: 6px 0;
       margin: 0 0 20px 0;
