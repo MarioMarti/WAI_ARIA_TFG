@@ -616,8 +616,8 @@ $( document ).ready(function() {
 </div> <!-- fin carousel-inner -->
 
                         <!-- Carousel nav -->
-                    <div class="carousel-control left" data-slider="#carouselhome" data-slide="prev" title="Ir a diapositiva anterior" role="button" aria-label="Show slide 0 of 0"><span class="fa fa-angle-left" aria-hidden="true"></span><span class="sr-only">Ir a diapositiva anterior</span></div>
-                        <div class="carousel-control right" data-slider="#carouselhome" data-slide="next" title="Ir a diapositiva siguiente" role="button" aria-label="Show slide 2 of 0"><span class="fa fa-angle-right" aria-hidden="true"></span><span class="sr-only">Ir a diapositiva siguiente</span></div>
+                    <div class="carousel-control left" data-slider="#carouselhome" tabindex="0" data-slide="prev" title="Ir a diapositiva anterior" role="button" aria-label="Show slide 0 of 0"><span class="fa fa-angle-left" aria-hidden="true"></span><span class="sr-only">Ir a diapositiva anterior</span></div>
+                        <div class="carousel-control right" data-slider="#carouselhome" tabindex="0" data-slide="next" title="Ir a diapositiva siguiente" role="button" aria-label="Show slide 2 of 0"><span class="fa fa-angle-right" aria-hidden="true"></span><span class="sr-only">Ir a diapositiva siguiente</span></div>
                     </div> <!-- fin carrousel -->
 
                 <script>
@@ -634,7 +634,12 @@ $( document ).ready(function() {
                         });
                         
                         // ACCESIBILIDAD CARRUSEL
-                        $(document).on('click', '.carousel-control', function () {
+                        $(document).on('click keydown', '.carousel-control', function () {
+
+							if(event.type === 'keydown' && event.which !== 13){
+								return;
+							}
+							
                             var CarouselDestino = $(this).attr('data-slider');
 
                             switch ($(this).attr('data-slide')) {
@@ -647,9 +652,7 @@ $( document ).ready(function() {
                             }
                         });
 
-                        $('#carouselhome .carousel-control-acc.carousel-pause').on('focus', function() {
-                            $(this).parents('.carousel').carousel('pause');
-                        });
+                
                         $('#carouselhome .carousel-control-acc.carousel-pause').on('click', function() {
                             $(this).parents('.carousel').carousel('pause');
                         });
