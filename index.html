@@ -464,8 +464,8 @@ ddLangs : [
 <div class="element carousel-container carousel slide margin-bottom-30  carousel-fade" id="Mycarousel2" data-ride="carousel">
 
 
-<button class="carousel-control-acc carousel-pause" title="Stop carousel"><span class="fa fa-pause" aria-hidden="true"></span><span class="sr-only">Stop carousel</span></button>
-		<button class="carousel-control-acc carousel-play" title="Restart carousel"><span class="fa fa-play" aria-hidden="true"></span><span class="sr-only">Restart carousel</span></button>
+<button class="carousel-control-acc carousel-pause" title="Stop carousel" style="width: 28px; left: 15px "><span class="fa fa-pause" aria-hidden="true"></span><span class="sr-only">Stop carousel</span></button>
+		<button class="carousel-control-acc carousel-play" title="Restart carousel" style="width: 28px; left: 50px " ><span class="fa fa-play" aria-hidden="true"></span><span class="sr-only">Restart carousel</span></button>
 		<div class="carousel-inner" role="listbox">
 			<div class="item only-image">
 
@@ -515,9 +515,6 @@ ddLangs : [
 
 		// ACCESIBILIDAD CARRUSEL
 
-		$('#Mycarousel2 .carousel-control-acc.carousel-pause').on('focus', function() {
-			$(this).parents('.carousel').carousel('pause');
-		});
 		$('#Mycarousel2 .carousel-control-acc.carousel-pause').on('click', function() {
 			$(this).parents('.carousel').carousel('pause');
 		});
@@ -531,7 +528,11 @@ ddLangs : [
 			$(this).parents('.carousel').carousel('cycle');
 		});
 
-        $(document).on('click', '.carousel-control', function () {
+        $(document).on('click keydown', '.carousel-control', function () {
+
+			if(event.type === 'keydown' && event.which !== 13){
+				return;
+			}
             var CarouselDestino = $(this).attr('data-slider');
 
             switch ($(this).attr('data-slide')) {
