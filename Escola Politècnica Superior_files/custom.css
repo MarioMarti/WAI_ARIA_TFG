@@ -69,7 +69,7 @@
     background: none;
 }
 
-#header .dropdown-info-per .btn:hover {
+#header .dropdown-info-per .btn:hover, .btn:focus {
 	color:#62a1bf;
 }
 
