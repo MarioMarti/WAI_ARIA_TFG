@@ -68,6 +68,11 @@
 #header .header .navbar-responsive-collapse .navbar-right > li > a:before {
     background: none;
 }
+
+#header .dropdown-info-per.open a:focus-visible {
+color: #62a1bf;
+}
+
 #header .dropdown-info-per .btn {
 	background: none;
     padding: 10px 20px;

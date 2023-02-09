@@ -2620,11 +2620,6 @@ select[multiple].input-lg,
   background-color: #ebebeb;
   border-color: #adadad;
 }
-.dropdown-info.per a:focus {
-  background: #007CB1;
-  color: #007CB1;
-}
-
 .btn-default:active, .btn-default.active {
   background-image: none;
 }
