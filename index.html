@@ -175,7 +175,11 @@ $(document).ready(function() {
         });
     }
 
-    $(document).on('click', '.carousel-control', function () {
+    $(document).on('click keydown', '.carousel-control', function () {
+
+		if(event.type === 'keydown' && event.which !== 13 ){
+			return;
+		}
         var CarouselDestino = $(this).attr('data-slider');
 
         switch ($(this).attr('data-slide')) {
