@@ -1,3 +1,4 @@
 .carousel .carousel-control:focus {
-    outline: 2px solid blue;
+    background: #fff;
+    color: #333;
   }
