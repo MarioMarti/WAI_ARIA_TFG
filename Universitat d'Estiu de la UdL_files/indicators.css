@@ -1,0 +1,4 @@
+.carousel .carousel-control:focus, .carousel .carousel-control:hover {
+    outline: 2px solid black;
+    background: #fff;
+  }
