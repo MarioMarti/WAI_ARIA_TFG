@@ -6,6 +6,11 @@
   margin: 0;
 }
 
+.dropdown-info-per{
+  background-color: #000;
+  outline: 1px white;
+}
+
 .disclosure-nav ul {
   background-color: #eee;
   border: 1px solid #005a9c;
