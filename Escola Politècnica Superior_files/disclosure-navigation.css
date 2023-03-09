@@ -53,8 +53,8 @@
 .disclosure-nav button,
 .disclosure-nav .main-link {
   align-items: center;
-  background-color: transparent;
-  border: 1px solid transparent;
+  background-color: black;
+  border: 1px solid white;
   border-right-color: #ccc;
   display: flex;
   padding: 1em;
