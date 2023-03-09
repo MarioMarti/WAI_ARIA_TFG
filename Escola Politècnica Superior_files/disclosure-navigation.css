@@ -45,7 +45,6 @@
 .disclosure-nav ul a:hover,
 .disclosure-nav ul a:focus {
   margin-bottom: 0;
-  text-decoration: none;
   background-color: #005a9c;
   color: #fff;
 }
