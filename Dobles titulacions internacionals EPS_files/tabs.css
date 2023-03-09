@@ -14,8 +14,11 @@
   font-size: 15px;
   border-radius: 0;
 }
-[class="tabTFG"],[class="tabTFG"]:focus{
+[class="tabTFG"]{
   background: #f3f3f3;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 }
 
 
