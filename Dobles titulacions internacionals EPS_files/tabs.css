@@ -16,7 +16,7 @@
 }
 [class="tabTFG"],[class="tabTFG"]:focus{
   background: #f3f3f3;
-  border: none;
+  border: 2px;
 }
 
 [class="tabTFG"]:hover{
