@@ -31,8 +31,8 @@ var CarouselPreviousNext = function (node, options) {
   this.previousButtonNode = null;
   this.nextButtonNode = null;
 
-  this.playLabel = 'Start automatic slide show';
-  this.pauseLabel = 'Stop automatic slide show';
+  this.playLabel = 'Empezar reproducción automática';
+  this.pauseLabel = 'Pausar reproducción automática';
 
   /* State properties */
   this.hasUserActivatedPlay = false; // set when the user activates the play/pause button
