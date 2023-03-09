@@ -16,10 +16,10 @@
 }
 [class="tabTFG"],[class="tabTFG"]:focus{
   background: #f3f3f3;
-  border: 2px;
+  border: none;
 }
 
-[class="tabTFG"]:hover{
+[class="tabTFG"]:hover, [class="tabTFG"][aria-selected="true"]:focus{
 
   position: relative;
   z-index: 2;
