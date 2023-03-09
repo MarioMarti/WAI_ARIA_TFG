@@ -16,9 +16,9 @@
 }
 [class="tabTFG"]{
   background: #f3f3f3;
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
 }
 
 
@@ -43,7 +43,6 @@
   border-width: 2px;
   border-top-width: 6px;
   border-top-color: rgb(36 116 214);
-  border-bottom-color: hsl(220deg 43% 99%);
   background: #ddd;
   color: #86b7ce;
   font-weight: bold;
