@@ -1,11 +1,4 @@
-/*.tabs {
-  font-family: "lucida grande", sans-serif;
-}/
-/*
-[role="tablist"] {
-  min-width: 550px;
-}
-*/
+
 [class="tablistTFG"]{
   min-width: 550px;
 }
