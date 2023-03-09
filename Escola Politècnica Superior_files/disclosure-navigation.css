@@ -84,6 +84,10 @@
   outline: 5px solid rgb(0 90 156 / 75%);
   position: relative;
 }
+.dropdown-info-per:focus{
+  background-color: #005a9c;
+  color: #fff;
+}
 
 .disclosure-nav button:hover, .disclosure-nav button:focus,
 .disclosure-nav button[aria-expanded="true"] {
