@@ -14,9 +14,11 @@
   font-size: 15px;
   border-radius: 0;
 }
-[class="tabTFG"],[class="tabTFG"]:focus{
+[class="tabTFG"]{
   background: #f3f3f3;
-  border: none;
+    border-left: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
 }
 
 [class="tabTFG"]:hover{
@@ -50,6 +52,7 @@
 [class="tabTFG"][aria-selected="false"]{
   color: #86b7ce;
   background: none;
+  border-top: none ;
 }
 
 [class="tabTFG"]:hover span.focus,
