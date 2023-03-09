@@ -52,6 +52,7 @@
 [class="tabTFG"][aria-selected="false"]{
   color: #86b7ce;
   background: none;
+  border-top: transparent ;
 }
 
 [class="tabTFG"]:hover span.focus,
