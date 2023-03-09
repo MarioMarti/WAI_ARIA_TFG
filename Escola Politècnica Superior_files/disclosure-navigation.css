@@ -85,7 +85,7 @@
   position: relative;
 }
 
-.disclosure-nav button:hover,
+.disclosure-nav button:hover, .disclosure-nav button:focus,
 .disclosure-nav button[aria-expanded="true"] {
   background-color: #005a9c;
   color: #fff;
