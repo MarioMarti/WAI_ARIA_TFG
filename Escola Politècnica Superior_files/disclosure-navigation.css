@@ -59,6 +59,7 @@
 .disclosure-nav .main-link {
   align-items: center;
   background-color: black;
+  color: #FFFFFF;
   border: 1px solid white;
   border-right-color: #ccc;
   display: flex;
