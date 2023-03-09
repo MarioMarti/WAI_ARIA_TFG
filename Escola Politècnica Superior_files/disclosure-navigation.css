@@ -6,9 +6,8 @@
   margin: 0;
 }
 
-.dropdown-info-per{
+.dropdown-info-per button{
   background-color: #000;
-  outline: 1px white;
   color: #FFFFFF;
 }
 
