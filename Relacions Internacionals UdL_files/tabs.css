@@ -36,14 +36,15 @@
   border-top-width: 6px;
   border-top-color: rgb(36 116 214);
   border-bottom-color: hsl(220deg 43% 99%);
-  background: #ddd;
-  color: #86b7ce;
+  background: #F1F1EC;
+  color: #000000;
   font-weight: bold;
 
 }
 
 [class="tabTFG"][aria-selected="false"]{
-  color: #86b7ce;
+  color: #3D7A98;
+  background-color:  #DADAD6;
   background: none;
   border-top: none;
 }
