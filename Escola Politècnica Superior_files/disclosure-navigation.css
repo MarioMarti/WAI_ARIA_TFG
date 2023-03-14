@@ -100,6 +100,11 @@
   color: #fff;
 }
 
+#header .dropdown-info-per .dropdown-menu > li > a:focus, #header .dropdown-info-per .dropdown-menu > li > a:hover {
+  color: white;
+  background-color: #005a9c;
+}
+
 .dropdown-menu a:hover, .dropdown-menu a:focus{
 color: white;
 background-color: #005a9c;
