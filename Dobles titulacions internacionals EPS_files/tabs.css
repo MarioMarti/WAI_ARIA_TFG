@@ -9,11 +9,10 @@
 }
 [class="tabTFG"]{
   background: #f3f3f3;
-  border-left: transparent;
+    border-left: transparent;
   border-right: transparent;
   border-bottom: transparent;
 }
-
 
 [class="tabTFG"]:hover{
 
@@ -36,6 +35,7 @@
   border-width: 2px;
   border-top-width: 6px;
   border-top-color: rgb(36 116 214);
+  border-bottom-color: hsl(220deg 43% 99%);
   background: #ddd;
   color: #86b7ce;
   font-weight: bold;
@@ -45,7 +45,7 @@
 [class="tabTFG"][aria-selected="false"]{
   color: #86b7ce;
   background: none;
-  border-top: none;
+  border-top: none ;
 }
 
 [class="tabTFG"]:hover span.focus,
@@ -67,7 +67,7 @@
   min-height: 10em;
   min-width: 550px;
   overflow: hidden;
-
+  background: #F1F1EC;
 }
 
 [class="tabpanelTFG"] p {
@@ -78,6 +78,7 @@
   padding: 6px 0;
   margin: 0 0 20px 0;
 }
+
 
 [role="tabpanel"].is-hidden {
   display: none;

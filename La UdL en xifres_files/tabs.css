@@ -3,49 +3,31 @@
   min-width: 550px;
 }
 [class="tabTFG"]{
-  padding: 12px 15px;
-  font-size: 15px;
-  border-radius: 0;
+  padding: 12px 15px; font-size: 15px; border-radius: 0;
 }
 [class="tabTFG"]{
-  background: #f3f3f3;
-    border-left: transparent;
-  border-right: transparent;
+  background: #f3f3f3; border-left: transparent; border-right: transparent;
   border-bottom: transparent;
 }
 
 [class="tabTFG"]:hover{
 
-  position: relative;
-  z-index: 2;
-  top: 2px;
-  margin: 0;
-  border: 1px solid hsl(219deg 1% 72%);
-  border-bottom: 2px solid hsl(219deg 1% 72%);
-  border-radius: 5px 5px 0 0;
-  overflow: visible;
-  outline: none;
-  font-weight: bold;
+  position: relative; z-index: 2;top: 2px;margin: 0;
+  border: 1px solid hsl(219deg 1% 72%);  border-bottom: 2px solid hsl(219deg 1% 72%);
+  border-radius: 5px 5px 0 0; overflow: visible;outline: none; font-weight: bold;
 
 }
 
 [class="tabTFG"][aria-selected="true"]{
-
-  margin-top: 0;
-  border-width: 2px;
-  border-top-width: 6px;
-  border-top-color: rgb(36 116 214);
-  border-bottom-color: hsl(220deg 43% 99%);
-  background: #ddd;
-  color: #86b7ce;
-  font-weight: bold;
+  margin-top: 0;  border-width: 2px;
+  border-top-width: 6px; border-top-color: rgb(36 116 214);
+  border-bottom-color: hsl(220deg 43% 99%);  background: #ddd;
+  color: #86b7ce;  font-weight: bold;
 
 }
 
 [class="tabTFG"][aria-selected="false"]{
-  color: #86b7ce;
-  background: none;
-  border-top: none ;
+  color: #86b7ce; background: none;  border-top: none ;
 }
 
 [class="tabTFG"]:hover span.focus,
@@ -53,20 +35,12 @@
 [class="tabTFG"]:active span.focus {
   border: 2px solid rgb(36 116 214);
   border-radius: 3px;
-
 }
-
-
-
 
 [class="tabpanelTFG"]{
 
-  padding: 20px;
-  margin-top: 20px;
-  border: solid 1px #ccc;
-  min-height: 10em;
-  min-width: 550px;
-  overflow: hidden;
+  padding: 20px;  margin-top: 20px; border: solid 1px #ccc;
+  min-height: 10em;  min-width: 550px;overflow: hidden;
   background: #F1F1EC;
 }
 
