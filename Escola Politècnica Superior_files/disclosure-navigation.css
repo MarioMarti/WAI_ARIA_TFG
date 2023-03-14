@@ -100,11 +100,10 @@
   color: #fff;
 }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
-  color: white;
-  background-color: #005a9c;
+.dropdown-menu a:hover, .dropdown-menu a:focus{
+color: white;
+background-color: #005a9c;
 }
-
 .disclosure-nav button:hover::after,
 .disclosure-nav button[aria-expanded="true"]::after {
   border-color: #fff;
