@@ -100,7 +100,7 @@
   color: #fff;
 }
 
-.dropdown-menu a:hover{
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
   color: white;
   background-color: #005a9c;
 }
