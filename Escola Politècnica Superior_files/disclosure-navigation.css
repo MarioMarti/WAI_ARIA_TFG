@@ -100,8 +100,9 @@
   color: #fff;
 }
 
-.dropdown-menu a span:hover{
-  outline: #005a9c;
+.dropdown-menu a:hover{
+  color: white;
+  background-color: #005a9c;
 }
 
 .disclosure-nav button:hover::after,
