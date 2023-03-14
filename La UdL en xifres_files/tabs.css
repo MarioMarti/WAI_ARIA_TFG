@@ -27,7 +27,7 @@
 }
 
 [class="tabTFG"][aria-selected="false"]{
-  color: #86b7ce; background: none;  border-top: none ;
+  color: #86b7ce;  border-top: none ;
 }
 
 [class="tabTFG"]:hover span.focus,
